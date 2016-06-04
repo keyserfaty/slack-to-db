@@ -90,6 +90,6 @@ module.exports = (ctx, cb) => {
     saveToMongo
   ], (err, res) => {
     if (err) return console.log(err);
-    console.log('Mongo saved correctly entries', res)
+    console.log(`Mongo saved correctly ${res.ops.length} entries`)
   }, cb);
 }
