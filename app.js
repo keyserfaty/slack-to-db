@@ -67,6 +67,10 @@ module.exports = (ctx, cb) => {
 
   /* Save the result to Mongo */
   const saveToMongo = (db, obj, cb) => {
+    if (!existy(obj)) {
+      return fail('No new object');
+    }
+
     if (!hasUrls(obj)) {
       return fail('Nothing to save');
     }
