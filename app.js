@@ -90,7 +90,7 @@ module.exports = (ctx, cb) => {
     slackRequest,
     saveToMongo
   ], (err, res) => {
-    if (err) return console.log(err);
+    if (err) return fail(err);
     console.log(`Mongo saved correctly ${res.ops.length} entries`)
   }, cb);
 }
