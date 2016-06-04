@@ -38,6 +38,7 @@ module.exports = (ctx, cb) => {
     }
   };
 
+  /* Check if obj has urls */
   const hasUrls = (obj) => {
     if (obj.length === 0) {
       return fail('This channel does not have any URL');
@@ -55,8 +56,8 @@ module.exports = (ctx, cb) => {
 
   /* Make a request to Slack for messages in history of the last five minutes */
   const slackRequest = (db, cb) => {
-    const token = 'xoxp-42985522996-42947300979-48170093921-fabe403e22';
-    const channel = 'C1E3ERWKD';
+    const token = ctx.data.SLACK_TOKEN;
+    const channel = ctx.data.SLACK_CHANNEL;
     const oldest = (Date.now() - 5 * 60 * 1000) / 1000;
 
     request.get(`https://slack.com/api/channels.history?token=${token}&channel=${channel}&oldest=${oldest}&pretty=1`, (err, res, body) => {
