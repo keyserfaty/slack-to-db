@@ -77,7 +77,7 @@ module.exports = (ctx, cb) => {
 
     db
       .collection('links')
-      .insertOne(obj, function (err, result) {
+      .insert(obj, function (err, result) {
         if(err) return cb(err);
         cb(null, result);
       });
