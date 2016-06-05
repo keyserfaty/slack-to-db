@@ -1,7 +1,7 @@
 "use latest";
 var MongoClient = require('mongodb').MongoClient;
 var request = require('request');
-var waterfall   = require('async').waterfall;
+var waterfall = require('async').waterfall;
 
 /* Tools */
 const fail = (err) => (
@@ -93,4 +93,4 @@ module.exports = (ctx, cb) => {
     if (err) return fail(err);
     console.log(`Mongo saved correctly ${res.ops.length} entries`)
   }, cb);
-}
+};
