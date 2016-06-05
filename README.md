@@ -19,8 +19,11 @@ To start the cron task run:
         -s SLACK_CHANNEL=ABC123 \
          "*/5 * * * *" \
          app.js
+         --watch
 
 You will need to specify a mongo URL, a Slack token and a Slack channel to run the cron task. You can get a Slack token for testing [here](https://api.slack.com/docs/oauth-test-tokens). Remember you will need to add the ID of the channel you would like to keep track of, not the channel's name. You can find out the ID of every channel in your team [here](https://api.slack.com/methods/channels.list/test).
+
+webtask will provide you with an URL. Access the URL to test the task and start it :)
 
 ## License
 
